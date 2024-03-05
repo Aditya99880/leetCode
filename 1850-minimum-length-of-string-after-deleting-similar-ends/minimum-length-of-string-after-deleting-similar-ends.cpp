@@ -2,14 +2,18 @@ class Solution {
 public:
     int minimumLength(string s) {
         ios_base::sync_with_stdio(0);
-        int i=0,j=s.size()-1;
-        while(s[i]==s[j] && i<j){
-            char ch=s[i];
-            while(s[i]==ch && i<=j) i++;
-            while(s[j]==ch && i<=j) j--;
-            if(i>j) return 0;
-            else if(i==j) return 1;
+        int left=0,right=s.size()-1;
+        while(left<right)
+        {
+            if(s[left]!=s[right]) break;
+            char c=s[left];
+            while(left<s.size() && s[left]==c){
+                left++;
+            }
+            while(left<right && s[right]==c){
+                right--;
+            }
         }
-        return j-i+1;
+        return right-left+1;
     }
 };

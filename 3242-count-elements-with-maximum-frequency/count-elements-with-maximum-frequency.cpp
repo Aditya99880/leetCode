@@ -8,7 +8,7 @@ public:
             m[nums[i]]++;
             if(m[nums[i]]>mx)
             {
-                mx=max(m[nums[i]],mx);
+                mx=m[nums[i]];
                 c=0;
             }
             if(m[nums[i]]==mx){

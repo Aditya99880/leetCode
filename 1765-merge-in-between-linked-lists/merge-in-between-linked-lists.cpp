@@ -11,14 +11,12 @@
 class Solution {
 public:
     ListNode* mergeInBetween(ListNode* list1, int a, int b, ListNode* list2) {
-        ListNode* left,*right,*prev,*temp=list1;
+        ListNode* left,*right,*temp=list1;
         int i=0;
         for(i=0;i<=b;i++){
             if(i+1==a) left =temp;
             else if(i==b) right=temp;
-            
-           
-               temp=temp->next; 
+            temp=temp->next; 
             
         }
         left->next=list2;
